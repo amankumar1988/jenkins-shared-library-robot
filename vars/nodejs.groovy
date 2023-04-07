@@ -11,7 +11,7 @@ def lintChecks(COMPONENT){
 }
 # call is the default function which will be called when you call the filename
 
-def call(){
+def call() {
     pipeline {
         agent any
         stages {
