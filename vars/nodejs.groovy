@@ -9,7 +9,7 @@ def lintChecks(COMPONENT){
         echo Performing lint checks completed"
     '''
 }
-# call is the default function which will be called when you call the filename
+// call is the default function which will be called when you call the filename
 
 def call() {
     pipeline {
