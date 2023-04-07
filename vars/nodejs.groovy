@@ -14,7 +14,7 @@ def call(COMPONENT){
     pipeline {
         agent any
         stages {
-            stage('Lint Checks')
+            stage('Lint Checks') {
                 steps{
                     script {
                         nodejs.lintChecks(COMPONENT)
