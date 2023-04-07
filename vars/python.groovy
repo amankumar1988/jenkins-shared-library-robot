@@ -1,10 +1,7 @@
 def lintChecks(COMPONENT){
     sh '''
         echo Lint Checks for ${COMPONENT}       
-        echo installing jslint
-        # npm install jslint"
-        # ls -lrth node_modules/jslint/bin"
-        # node_modules/jslint/bin/jslint.js server.js"
+        # pylint *.py
         echo Performing lint checks for ${COMPONENT}
         echo Performing lint checks completed ${COMPONENT}
     '''
