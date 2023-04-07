@@ -5,8 +5,8 @@ def lintChecks(COMPONENT){
         # npm install jslint"
         # ls -lrth node_modules/jslint/bin"
         # node_modules/jslint/bin/jslint.js server.js"
-        echo Performing lint checks"
-        echo Performing lint checks completed"
+        echo Performing lint checks for ${COMPONENT}
+        echo Performing lint checks completed ${COMPONENT}
     '''
 }
 // call is the default function which will be called when you call the filename
