@@ -1,5 +1,5 @@
-def info(){
-    echo "INFO: ${message}"
+def info(message, URL){
+    echo "INFO: ${message} ${URL}"
 }
 
-info("Hello")
+// info("Hello", "library.google.com")
