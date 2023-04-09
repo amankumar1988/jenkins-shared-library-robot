@@ -71,6 +71,19 @@ def call() {
                 }
             } 
 
+            stage('Checking the artifacts Version') {
+            when { 
+                expression { env.TAG_NAME != null } 
+                // expression { env.UPLOAD_STATUS == "" }
+                }
+                steps{
+                    script{
+                        env.UPLOAD_STATUS=sh(returnStdout: true, script: 'curl http://172.31.8.18:8081/service/rest/repository/browse/${COMPONENT}/ | grep ${COMPONENT}-${TAG_NAME}')
+                    }
+
+                }
+            }
+
             stage('Prepare the artifacts') {
             when { 
                 expression { env.TAG_NAME != null } 
