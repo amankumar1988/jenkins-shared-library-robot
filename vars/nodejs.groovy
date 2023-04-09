@@ -25,20 +25,17 @@ def call() {
             stage('Lint Checks') {
                 steps{
                     script {
-                        sonarChecks()
-                    }
-                }  
-             }
-
-            stage('Sonar Checks') {
-                steps{
-                    script {
                         lintChecks()
                     }
                 }  
              }
-
-
+            stage('Sonar Checks') {
+                steps{
+                    script {
+                        sonarChecks()
+                    }
+                }  
+             }
         }
     }
 }
