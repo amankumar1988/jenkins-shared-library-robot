@@ -75,6 +75,7 @@ def call() {
                 }
             }
             stage('Publish the artifacts') {
+                when { expression {env.TAG_NAME != null } }
                 steps{
                     sh "echo Publishing the artifacts"
                 }
