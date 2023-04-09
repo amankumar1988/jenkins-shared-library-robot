@@ -22,10 +22,10 @@ def call() {
     pipeline {
         agent any
         stages {
-            stage('Sonar Checks') {
+            stage('Lint Checks') {
                 steps{
                     script {
-                        sonarChecks()
+                        lintChecks()
                     }
                 }  
              }
