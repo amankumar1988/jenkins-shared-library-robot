@@ -3,5 +3,5 @@ def sonarChecks(){
     // sh "curl https://gitlab.com/thecloudcareers/opensource/-/raw/master/lab-tools/sonar-scanner/quality-gate > quality-gate.sh"
     // sh "bash -x quality-gate.sh ${SONAR_USR} ${SONAR_PSW} ${SONAR_URL} ${COMPONENT}"
     sh "echo Starting the Code Quality Analysis"
-    sh echo Code Quality Analysis Completed"
+    sh "echo Code Quality Analysis Completed"
 }
