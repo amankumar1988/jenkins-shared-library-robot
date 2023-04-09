@@ -39,11 +39,11 @@ def call() {
                 }  
              }
 
-            stage ('Performing npm install') {
-                steps{
-                    sh "echo Hi this is test"
-                }
-            }
+            // stage ('Performing npm install') {
+            //     steps{
+            //         sh "echo Hi this is test"
+            //     }
+            // }
         stage('Test Cases') {
           parallel {
             stage('Unit Test') {
@@ -74,7 +74,9 @@ def call() {
                 // expression { env.UPLOAD_STATUS == "" }
                 }
                 steps{
-                    sh "echo Prepare the artifacts"
+                    sh "npm install"
+                    sh "echo Preparing the artifacts"
+                    sh " zip ${COMPONENT}-${TAG_NAME}.zip node_modules server.js"
                 }
             }
             stage('Publish the artifacts') {
