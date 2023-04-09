@@ -26,6 +26,8 @@ def call() {
             stage('Sonar Checks') {
                 steps{
                     script {
+                        sh "mvn clean compile"
+                        env.ARGS="-Dsonar.java.brinaries=target/"
                         common.sonarChecks()
                     }
                 }  
