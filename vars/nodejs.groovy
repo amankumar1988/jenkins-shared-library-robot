@@ -40,6 +40,14 @@ def call() {
                     }
                 }  
              }
+
+            stage ('Performing npm install') {
+                steps{
+                    sh "echo Hi this is test"
+                }
+            }
+
+
         }
     }
 }
