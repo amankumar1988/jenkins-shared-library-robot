@@ -66,7 +66,20 @@ def call() {
                         }
                     }
                 }
-            }  
+            } 
+
+            stage('Prepare the artifacts') {
+                when { expression {env.TAG_NAMR != null } }
+                steps{
+                    sh "echo Prepare the artifacts"
+                }
+            }
+            stage('Publish the artifacts') {
+                steps{
+                    sh "echo Publishing the artifacts"
+                }
+            }
+
         }
     }
 }
