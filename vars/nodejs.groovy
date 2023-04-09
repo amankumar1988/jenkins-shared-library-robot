@@ -21,7 +21,7 @@ def call() {
         SONAR_URL = "172.31.1.163"
         NEXUS = credentials('NEXUS')
         SONAR = credentials('SONAR')
-        NEXU_URL = "172.31.8.18"
+        NEXUS_URL = "172.31.8.18"
 
         }
 
