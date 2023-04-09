@@ -44,6 +44,29 @@ def call() {
                     sh "echo Hi this is test"
                 }
             }
+        stage('Test Cases') {
+          parallel {
+            stage('Unit Test') {
+                steps{
+                    // sh "npm test"
+                    sh "echo Performing Unit Testing"
+                }
+            }   
+            stage('Integration Test') {
+                steps{
+                     // sh "npm verify"
+                    sh "echo Performing Integration Testing"
+                }
+            
+            }
+                stage('Functional Test') {
+                    steps{
+                         // sh "npm verify"
+                        sh "echo Performing Functional Testing"
+                        }
+                    }
+                }
+            }  
         }
     }
 }

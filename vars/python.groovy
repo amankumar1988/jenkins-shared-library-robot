@@ -30,7 +30,32 @@ def call() {
                         common.sonarChecks()
                     }
                 }  
-             } 
+             }
+
+        stage('Test Cases') {
+          parallel {
+            stage('Unit Test') {
+                steps{
+                    // sh "mvn test"
+                    sh "echo Performing Unit Testing"
+                }
+            }   
+            stage('Integration Test') {
+                steps{
+                     // sh "mvn verify"
+                    sh "echo Performing Integration Testing"
+                }
+            
+            }
+                stage('Functional Test') {
+                    steps{
+                         // sh "mvn verify"
+                        sh "echo Performing Functional Testing"
+                        }
+                    }
+                }
+            }  
+
         }
     }
 }
