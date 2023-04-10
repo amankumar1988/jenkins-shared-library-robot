@@ -18,6 +18,32 @@ def sonarChecks(){
     }
 }
 
+def testCases(){
+    stage('Test Cases'){
+        def stages = [:]
+
+        stages["Unit Testing"] = {
+            echo "Unit Testing Started"
+            echo "Unit Testing Completed"
+            // sh mvn test or npm test
+        }
+        stages["Integration Testing"] = {
+            echo "Integration Testing Started"
+            echo "Integration Testing Completed"
+            // sh mvn verify or npm verify
+        }
+        stages["Functional Testing"] = {
+            echo "Functional Testing Started"
+            echo "Functional Testing Completed"
+            // sh mvn verify or npm verify
+        }
+
+        parallel(stages)
+    }
+    }
+}
+
+
 
 def lintChecks(){
     stage('Lint Checks'){

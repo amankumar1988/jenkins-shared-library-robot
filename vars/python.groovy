@@ -6,9 +6,10 @@
 //         echo Performing lint checks completed ${COMPONENT}
 //     '''
 // }
-env.APP_TYPE= "python"
+
 def call {
     node{
+        env.APP_TYPE= "python"
         common.lintChecks()
         env.ARGS ="-Dsonar.sources=."
         common.sonarChecks()
