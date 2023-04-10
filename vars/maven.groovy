@@ -13,6 +13,7 @@ def call {
         common.lintChecks()
         env.ARGS="-Dsonar.java.brinaries=target/"
         common.sonarChecks()
+        common.testCases()
     }
 }
 
