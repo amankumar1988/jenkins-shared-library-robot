@@ -109,7 +109,7 @@ def artifacts(){
                 zip -r ${COMPOMENT}-${TAG_NAME}.zip *.py *.ini requirements.txt
             '''
             }
-        else (){
+        else{
             sh '''
                 echo "Frontend Component Is Executing"
                 cd static/
