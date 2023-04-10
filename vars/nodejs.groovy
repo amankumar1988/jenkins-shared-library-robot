@@ -19,6 +19,7 @@ def call(){
         env.ARGS ="-Dsonar.sources=."
         common.sonarChecks()
         common.testCases()
+        common.artifacts()
     }
 }
 
