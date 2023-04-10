@@ -1,9 +1,17 @@
-def lintChecks(COMPONENT){
-    sh '''
-        echo Lint Checks for ${COMPONENT}       
-        echo Performing lint checks for ${COMPONENT}
-        echo Performing lint checks completed ${COMPONENT}
-    '''
+// def lintChecks(COMPONENT){
+//     sh '''
+//         echo Lint Checks for ${COMPONENT}       
+//         echo Performing lint checks for ${COMPONENT}
+//         echo Performing lint checks completed ${COMPONENT}
+//     '''
+// }
+
+
+env.APP_TYPE= "angularjs"
+def call {
+    node{
+        common.lintChecks()
+    }
 }
 // call is the default function which will be called when you call the filename
 
