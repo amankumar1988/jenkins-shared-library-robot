@@ -40,7 +40,6 @@ def testCases(){
 
         parallel(stages)
     }
-    }
 }
 
 
