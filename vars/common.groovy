@@ -98,14 +98,15 @@ def artifacts(){
             zip -r ${COMPONENT}-${TAG_NAME}.zip node_modules server.js"
             '''
         }
-        else if(env.APP_TYPE =="nodejs"){
+        else if(env.APP_TYPE =="maven"){
          sh '''
-              echo "Yet fill"
+             mvn clean package
+             mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar 
             '''
         }
-        else if(env.APP_TYPE =="nodejs"){
+        else if(env.APP_TYPE =="python"){
             sh '''
-                echo "Yet to fill"
+                zip -r ${COMPOMENT}-${TAG_NAME}.zip *.py *.ini requirements.txt
             '''
             }
         }
