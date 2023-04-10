@@ -82,3 +82,32 @@ def lintChecks(){
         }
     }
 }
+// I only want to run check the release, check the artifact and push the artifact to nexus, only if the artifact doesn't exist
+def artifacts(){
+
+    stage('Check the Release'){
+        env.UPLOAD_STATUS=sh(returnStdout: true, script: 'curl -L -s http://${NEXUS_URL}:8081/service/rest/repository/browse/${COMPONENT} | grep ${COMPONENT}-${TAG_NAME}.zip || true')
+        print UPLOAD_STATUS
+    }
+    if (env.UPLOAD_STATUS == ''){
+        stage('Preparing the artifact'){
+            if(env.APP_TYPE == "nodejs"){
+            sh '''
+            npm install"
+            echo Preparing the artifacts"
+            zip -r ${COMPONENT}-${TAG_NAME}.zip node_modules server.js"
+            '''
+        }
+        else if(env.APP_TYPE =="nodejs"){
+         sh '''
+              echo "Yet fill"
+            '''
+        }
+        else if(env.APP_TYPE =="nodejs"){
+            sh '''
+                echo "Yet to fill"
+            '''
+        }
+    }
+
+}
