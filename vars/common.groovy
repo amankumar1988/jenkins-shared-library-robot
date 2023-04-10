@@ -107,7 +107,7 @@ def artifacts(){
             sh '''
                 echo "Yet to fill"
             '''
+            }
         }
     }
-
 }
