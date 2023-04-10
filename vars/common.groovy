@@ -109,6 +109,13 @@ def artifacts(){
                 zip -r ${COMPOMENT}-${TAG_NAME}.zip *.py *.ini requirements.txt
             '''
             }
+        else (){
+            sh '''
+                echo "Frontend Component Is Executing"
+                cd static/
+                zip -r ../${COMPONENT}-${TAG_NAME}.zip *
+                '''
+            }
         }
         stage('Upload the artifacts'){
             withCredentials([usernamePassword(credentialsId: 'NEXUS', passwordVariable: 'NEXUS_PSW', usernameVariable: 'NEXUS_USR')]) {
