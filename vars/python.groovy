@@ -7,13 +7,15 @@
 //     '''
 // }
 
-def call {
-    node{
-        env.APP_TYPE= "python"
+def call() {
+    node {
+        git branch: 'main', url: "https://github.com/b53-clouddevops/${COMPONENT}.git"
+        env.APP_TYPE = "python" 
         common.lintChecks()
-        env.ARGS ="-Dsonar.sources=."
+        env.ARGS="-Dsonar.sources=."
         common.sonarChecks()
         common.testCases()
+        common.artifacts()
     }
 }
 

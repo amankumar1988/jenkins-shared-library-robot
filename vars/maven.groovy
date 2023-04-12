@@ -9,12 +9,14 @@
 // call is the default function which will be called when you call the filename
 
 def call() {
-    node{
-        env.APP_TYPE= "maven"
+    node {
+        git branch: 'main', url: "https://github.com/b53-clouddevops/${COMPONENT}.git"
+        env.APP_TYPE = "maven" 
         common.lintChecks()
-        env.ARGS="-Dsonar.java.brinaries=target/"
+        env.ARGS="-Dsonar.java.binaries=target/"
         common.sonarChecks()
         common.testCases()
+        common.artifacts()
     }
 }
 
