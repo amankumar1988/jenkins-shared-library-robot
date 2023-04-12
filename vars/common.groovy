@@ -95,7 +95,7 @@ def artifacts(){
             sh '''
             npm install
             echo Preparing the artifacts"
-            zip -r ${COMPONENT}-${TAG_NAME}.zip node_modules server.js"
+            sudo zip -r ${COMPONENT}-${TAG_NAME}.zip node_modules server.js"
             '''
         }
         else if(env.APP_TYPE =="maven"){
