@@ -8,6 +8,7 @@ def call() {
             choice(choices: 'apply\ndestroy', description: "Choice the Action.", name: "ACTION"),
         ]),
     ])
+    node {
     ansiColor('xterm') {
         sh "rm -rf *"
         git branch: 'main', url: "https://github.com/amankumar1988/${REPONAME}.git"
@@ -33,7 +34,7 @@ def call() {
             }
         }
     }
-
+}
 
     // pipeline {
     //     agent any
