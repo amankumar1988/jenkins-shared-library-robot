@@ -9,7 +9,7 @@ def call() {
     ansiColor('xterm') {
             stage('Terraform Init'){
                 sh '''
-                    terrafile -f env-dev/Terrafile"
+                    terrafile -f env-dev/Terrafile
                     terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars
                 '''
             }
