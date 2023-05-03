@@ -7,6 +7,9 @@ def call() {
         ]),
     ])
     ansiColor('xterm') {
+        sh "rm -rf *"
+        git clone https://github.com/amankumar1988/terraform-vpc.git
+
             stage('Terraform Init'){
                 sh '''
                     terrafile -f env-dev/Terrafile
