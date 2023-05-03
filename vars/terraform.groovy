@@ -2,8 +2,8 @@ def call() {
     node {
     properties([
         parameters([
-            choice(choices: ['dev\nprod'], description: "Choice the Envt.", name: "ENV"),
-            choice(choices: ['apply\ndestroy'], description: "Choice the Action.", name: "ACTION"),
+            choice(choices: 'dev\nprod', description: "Choice the Envt.", name: "ENV"),
+            choice(choices: 'apply\ndestroy', description: "Choice the Action.", name: "ACTION"),
         ]),
     ])
     ansiColor('xterm') {
