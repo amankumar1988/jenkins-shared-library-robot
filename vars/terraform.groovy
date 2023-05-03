@@ -8,7 +8,7 @@ def call() {
     ])
     ansiColor('xterm') {
         sh "rm -rf *"
-        git clone https://github.com/amankumar1988/terraform-vpc.git
+        git branch: 'main', url: "https://github.com/amankumar1988/${REPONAME}.git"
 
             stage('Terraform Init'){
                 sh '''
