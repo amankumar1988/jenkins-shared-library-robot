@@ -6,6 +6,7 @@ def call() {
         parameters([
             choice(choices: 'dev\nprod', description: "Choice the Envt.", name: "ENV"),
             choice(choices: 'apply\ndestroy', description: "Choice the Action.", name: "ACTION"),
+            string(choices: 'APP_VERSION', description: "Enter the Backend Version to be deployed, IGNRORE THIS IF THIS IS BACKEND COMPONENT", name: "APP_VERSION"),
         ]),
     ])
     node {
